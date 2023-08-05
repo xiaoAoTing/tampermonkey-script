@@ -12,6 +12,7 @@
 // @match        https://link.csdn.net/*
 // @match        https://link.juejin.cn/*
 // @match        http://link.zhihu.com/*
+// @match        https://panjiachen.github.io/*
 // @require      https://cdn.staticfile.org/jquery/3.6.4/jquery.js
 // @contributionURL https://doc.stackoverflow.wiki/web/#/21?page_id=138
 // @grant        GM_addStyle
@@ -21,9 +22,9 @@
 // ==/UserScript==
 
 
-(function() {
+(function () {
     'use strict';
-    
+
     ///////////// 工具函数 START //////////////////
 
     function StyleSheet(styles) {
@@ -31,7 +32,7 @@
         this.id = this.uuid();
     }
 
-    StyleSheet.prototype.insert = function() {
+    StyleSheet.prototype.insert = function () {
         var style = document.createElement('style');
         style.type = 'text/css';
         style.id = this.id;
@@ -39,12 +40,12 @@
         return document.head.appendChild(style);
     };
 
-    StyleSheet.prototype.remove = function() {
+    StyleSheet.prototype.remove = function () {
         var styleEl = document.querySelector('#' + this.id);
         styleEl.parentNode.removeChild(styleEl);
     };
 
-    StyleSheet.prototype.uuid = function() {
+    StyleSheet.prototype.uuid = function () {
         function S4() {
             return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
         }
@@ -71,6 +72,17 @@
     ////////// 匹配页面 START ////////////
 
     let href = location.href;
+
+
+
+    // Vue Element Admin 演示项目
+    if (href.includes('panjiachen.github.io')) {
+        let stylesheet = new StyleSheet(`
+            #carbonads { display: none !important; }
+        `)
+        stylesheet.insert();
+    }
+
     // 免费听音乐的网站
     if (href.includes('zz123.com')) {
         let stylesheet = new StyleSheet(`
