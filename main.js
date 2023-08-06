@@ -13,6 +13,7 @@
 // @match        https://link.juejin.cn/*
 // @match        http://link.zhihu.com/*
 // @match        https://panjiachen.github.io/*
+// @match        https://c.runoob.com/*
 // @require      https://cdn.staticfile.org/jquery/3.6.4/jquery.js
 // @contributionURL https://doc.stackoverflow.wiki/web/#/21?page_id=138
 // @grant        GM_addStyle
@@ -74,6 +75,21 @@
     let href = location.href;
 
 
+    // 菜鸟在线工具 JSON
+    if (href.includes('c.runoob.com/front-end/53/')) {
+        let stylesheet = new StyleSheet(`
+            .card-body { padding: 0 !important; }
+            .card-header { padding: 0 !important; }
+            .card-header .col-md-8 { padding: 0 !important; }
+            .card-header .col-md-4 strong { display: none !important; }
+            .navbar { display: none !important; }
+            body { padding: 0 !important;  }
+            .page-footer { display: none !important; }
+        `)
+        stylesheet.insert();
+
+        $('.runoob-page-content').next().hide()
+    }
 
     // Vue Element Admin 演示项目
     if (href.includes('panjiachen.github.io')) {
