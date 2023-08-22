@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         execute onto any website.
+// @name         my script
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @connect      www.csdn.net
