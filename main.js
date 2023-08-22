@@ -163,10 +163,10 @@
         style.insert()
     };
     // CSDN 跳转外部页面拦截页
-    if (href.includes('link.csdn.net')) {
-        let targetURL = serializeQuery(location.search);
-        setTimeout(() => { location.href = targetURL; }, 1500);
-    }
+    // if (href.includes('link.csdn.net')) {
+    //     let targetURL = serializeQuery(location.search);
+    //     setTimeout(() => { location.href = targetURL; }, 1500);
+    // }
     // 掘金链接跳转中转页（别弹一个你确定吗？you sure ?）
     if (href.includes('https://link.juejin.cn/')) {
         let query = serializeQuery(location.search);
