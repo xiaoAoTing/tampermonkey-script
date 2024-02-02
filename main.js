@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         my script
+// @name         execute onto any website.
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @connect      www.csdn.net
@@ -76,12 +76,12 @@
 
 
     // 菜鸟在线工具 JSON
-    if (href.includes('c.runoob.com/front-end/53/')) {
+    if (href.includes('www.jyshare.com/front-end/53/')) {
         let stylesheet = new StyleSheet(`
             .card-body { padding: 0 !important; }
             .card-body .row .col-sm-1, .card-body .row .col-sm-6 { display: none !important; }
-            .card-body .row .col-sm-5 { 
-                width: 100% !important; max-width: 100% !important; flex: 1 !important; 
+            .card-body .row .col-sm-5 {
+                width: 100% !important; max-width: 100% !important; flex: 1 !important;
                 padding: 0 !important; margin: 0 !important;
             }
             .card-header { display: none !important; }
@@ -173,6 +173,7 @@
         console.log(query)
         location.href = decodeURIComponent(query.target);
     }
+    // 知乎
     if (href.includes('link.zhihu.com')) {
         let query = serializeQuery(location.search);
         console.log(query)
