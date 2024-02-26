@@ -14,6 +14,7 @@
 // @match        http://link.zhihu.com/*
 // @match        https://panjiachen.github.io/*
 // @match        https://c.runoob.com/*
+// @match        https://www.jyshare.com/*
 // @require      https://cdn.staticfile.org/jquery/3.6.4/jquery.js
 // @contributionURL https://doc.stackoverflow.wiki/web/#/21?page_id=138
 // @grant        GM_addStyle
@@ -76,7 +77,7 @@
 
 
     // 菜鸟在线工具 JSON
-    if (href.includes('www.jyshare.com/front-end/53/')) {
+    if (href.includes('https://www.jyshare.com/front-end/53/')) {
         let stylesheet = new StyleSheet(`
             .card-body { padding: 0 !important; }
             .card-body .row .col-sm-1, .card-body .row .col-sm-6 { display: none !important; }
@@ -90,6 +91,7 @@
             .page-footer { display: none !important; }
 
             #jsoneditor1 { height: 565px !important; }
+            #jsoneditor1 > div {height: 100vh !important;}
         `)
         stylesheet.insert();
 
