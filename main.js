@@ -133,6 +133,8 @@
     }
     // CSDN 文章页面
     if (href.includes('https://blog.csdn.net/') && href.includes('article') && href.includes('details')) {
+        $('#mainBox > main > div.recommend-box.insert-baidu-box.recommend-box-style').hide() // 文章底部其他文章内容推荐
+        $('#blogHuaweiyunAdvert > div > div').hide() // 文章被“华为云社区收纳”提示横幅
         $('#csdn-toolbar').hide() // 顶部条
         $('#blogColumnPayAdvert').hide() // 专栏
         $('#ad_iframe').hide() // 广告 Iframe
