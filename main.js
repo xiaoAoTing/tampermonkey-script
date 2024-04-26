@@ -3,8 +3,8 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @connect      www.csdn.net
-// @include      *://*.csdn.net/*
-// @include      https://shimo.im/*
+// @match        *://*.csdn.net/*
+// @match        https://shimo.im/*
 // @match        https://www.jianshu.com/p/*
 // @match        https://www.zhihu.com/question/*
 // @match        https://cloud.tencent.com/developer/article/*
@@ -153,17 +153,10 @@
                 transform: translateX(-50%);
             }
             /* 侧边栏 */
-            .blog_container_aside,.csdn-side-toolbar { display: none !important;  }
-            /* 底部分享按钮 */
-            #tool-share { display: none !important;  }
-            /* AD */
-            #ad_unit { display: none; }
-            #recommend-right { display: none; } /* 分类专栏 */
-            /* 底部推荐1,2 */
-            .first-recommend-box,.second-recommend-box{ display: none !important;  }
-            .toolbox-middle { display: none !important;  }
-            .toolbox-right {display: none !important; }
+            .blog_container_aside,
+            .csdn-side-toolbar { display: none !important;  }
         `);
+
         style.insert()
     };
     // CSDN 跳转外部页面拦截页
