@@ -1,5 +1,6 @@
 // ==UserScript==
-// @name         execute onto any website.
+// @name         zhousheng's script
+// @description  execute onto any website.
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @connect      www.csdn.net
@@ -17,11 +18,9 @@
 // @match        https://c.runoob.com/*
 // @match        https://www.jyshare.com/*
 // @require      https://cdn.staticfile.org/jquery/3.6.4/jquery.js
-// @contributionURL https://doc.stackoverflow.wiki/web/#/21?page_id=138
 // @grant        GM_addStyle
 // @grant        GM_setValue
 // @grant        GM_getValue
-// @antifeature ads CSDNGreener 脚本中存在可永久关闭的小广告，请放心安装！
 // ==/UserScript==
 
 
