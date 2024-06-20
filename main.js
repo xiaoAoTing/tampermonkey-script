@@ -7,6 +7,7 @@
 // @match        https://shimo.im/*
 // @match        https://www.jianshu.com/p/*
 // @match        https://www.zhihu.com/question/*
+// @match        https://zhuanlan.zhihu.com/p/*
 // @match        https://cloud.tencent.com/developer/article/*
 // @match        https://zz123.com/*
 // @match        https://link.csdn.net/*
@@ -145,16 +146,38 @@
         $('.article-info-box .operating').hide(); // 版权信息
         $('.blog-footer-bottom').hide(); // 页面 Footer
 
+        // 自动展开长代码块
+        $(document).ready(function () {
+            setTimeout(() => {
+                $('.hide-preCode-bt').click()
+            }, 100)
+        })
+
         let style = new StyleSheet(`
             main {
                 position: absolute;
                 left: 50%;
                 width: 68vw;
                 transform: translateX(-50%);
+                padding-bottom: 30px;
             }
             /* 侧边栏 */
             .blog_container_aside,
-            .csdn-side-toolbar { display: none !important;  }
+            #kp_box_479 > div,
+            #recommend-right > div.aside-box.kind_person.d-flex.flex-column,
+            .csdn-side-toolbar,
+            .recommend-box,
+            #toolBarBox > div > div.toolbox-left > div.profile-attend,
+            #asideArchive { display: none !important;  }
+            #csdn-toolbar{position: relative !important;}
+            .left-toolbox {left:0 !important;}
+            /* 去除body花里胡哨的背景图片 */
+            body {
+                background: #f3f5f6 !important;
+            }
+            /* 文章标题边距 */
+            #articleContentId { padding: 20px 0; }
+            #mainBox > main > div.blog-content-box > article { padding: 40px 0 20px !important; }
         `);
 
         style.insert()
@@ -188,11 +211,13 @@
         `);
         style.insert();
     }
-    // 知乎问题页面
+    // 知乎
     if (href.includes('zhihu')) {
         let style = new StyleSheet(`
             .Sticky.is-fixed{position:relative !important;}
-            .Question-sideColumn{display: none !important;}
+            .Question-sideColumn,
+            .Sticky.ColumnPageHeader,
+            div.ColumnPageHeader-content{display: none !important;}
             .Question-main{justify-content: center !important;}
             .CollapsedAnswers-bar{display: none !important;} /*1 个回答被折叠（为什么？）*/
         `);
