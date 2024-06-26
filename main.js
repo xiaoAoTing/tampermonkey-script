@@ -5,6 +5,7 @@
 // @version      0.1
 // @connect      www.csdn.net
 // @match        *://*.csdn.net/*
+// @match        https://chatgpt.com/*
 // @match        https://shimo.im/*
 // @match        https://www.jianshu.com/p/*
 // @match        https://www.zhihu.com/question/*
@@ -75,6 +76,16 @@
 
     let href = location.href;
 
+
+    // ChatGPT
+    if (href.includes('chatgpt.com')) {
+        new StyleSheet(`
+            main .mx-auto.flex.flex-1.gap-3.text-base {
+                width: 100%;
+                max-width: 999999px;
+            }
+        `).insert()
+    }
 
     // 菜鸟在线工具 JSON
     if (href.includes('https://www.jyshare.com/front-end/53/')) {
