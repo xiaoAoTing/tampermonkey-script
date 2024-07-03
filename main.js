@@ -163,7 +163,7 @@
             }, 100)
         })
 
-        let style = new StyleSheet(`
+        new StyleSheet(`
             main {
                 position: absolute;
                 left: 50%;
@@ -178,7 +178,8 @@
             .csdn-side-toolbar,
             .recommend-box,
             #toolBarBox > div > div.toolbox-left > div.profile-attend,
-            #asideArchive { display: none !important;  }
+            #asideArchive,
+            #kp_box_530 { display: none !important; }
             #csdn-toolbar{position: relative !important;}
             .left-toolbox {left:0 !important;}
             /* 去除body花里胡哨的背景图片 */
@@ -188,9 +189,7 @@
             /* 文章标题边距 */
             #articleContentId { padding: 20px 0; }
             #mainBox > main > div.blog-content-box > article { padding: 40px 0 20px !important; }
-        `);
-
-        style.insert()
+        `).insert()
     };
     // CSDN 跳转外部页面拦截页
     // if (href.includes('link.csdn.net')) {
