@@ -179,7 +179,8 @@
             .recommend-box,
             #toolBarBox > div > div.toolbox-left > div.profile-attend,
             #asideArchive,
-            #kp_box_530 { display: none !important; }
+            #kp_box_530,
+            .fc-ccpa-root { display: none !important; }
             #csdn-toolbar{position: relative !important;}
             .left-toolbox {left:0 !important;}
             /* 去除body花里胡哨的背景图片 */
