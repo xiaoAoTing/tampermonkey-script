@@ -161,6 +161,9 @@
             setTimeout(() => {
                 $('.hide-preCode-bt').click()
             }, 100)
+            setInterval(() => {
+                $('.fc-ccpa-root + div')[0].style = null
+            }, 200)
         })
 
         new StyleSheet(`
@@ -181,8 +184,9 @@
             #asideArchive,
             #kp_box_530,
             html body div.fc-ccpa-root,
-            html body #ft-floating-toolbar { display: none !important; }
-            #csdn-toolbar{position: relative !important;}
+            html body #ft-floating-toolbar,
+            .fc-ccpa-root + div { display: none !important; }
+            #csdn-toolbar {position: relative !important;}
             .left-toolbox {left:0 !important;}
             /* 去除body花里胡哨的背景图片 */
             body {
