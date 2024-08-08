@@ -18,6 +18,7 @@
 // @match        https://panjiachen.github.io/*
 // @match        https://c.runoob.com/*
 // @match        https://www.jyshare.com/*
+// @match        https://www.logosc.cn/*
 // @require      https://cdn.staticfile.org/jquery/3.6.4/jquery.js
 // @grant        GM_addStyle
 // @grant        GM_setValue
@@ -76,6 +77,15 @@
 
     let href = location.href;
 
+    // 标小智
+    if (href.includes('https://www.logosc.cn/make')) {
+        new StyleSheet(`
+            body .el-dialog__wrapper.login-dialog,
+            body .v-modal {
+                display: none !important;       
+            }
+        `).insert()
+    }
 
     // ChatGPT
     if (href.includes('chatgpt.com')) {
